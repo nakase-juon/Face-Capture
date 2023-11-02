@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac530a0e17174f44b2170b96de29539, type: 3}
+  m_Name: SavedActionUnits
+  m_EditorClassIdentifier: 
+  AU:
+    AU1: 0
+    AU2: 0
+    AU4: 0
+    AU5: 0
+    AU6: 0
+    AU7: 0
+    AU9: 0
+    AU10: 0
+    AU12: 0
+    AU14: 0
+    AU15: 0
+    AU16: 0
+    AU17: 0
+    AU18: 0
+    AU20: 0
+    AU22: 0
+    AU23: 0
+    AU24: 0
+    AU25: 0
+    AU26: 0
+    AU28: 0
+    AU45: 0
+    AU65: 0
+    AU66: 0
+    AD29: 0
+    AD30: 0
+    AD34: 0
+    M63: 0
+    M64: 0

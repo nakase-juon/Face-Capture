@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d5bab71-1d46-478c-8a05-76410274bf4f" name="Changes" comment="" />
+    <list default="true" id="9d5bab71-1d46-478c-8a05-76410274bf4f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Face Capture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Face Capture/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Rukha93/Characters/Mia/Materials/body_eye.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rukha93/Characters/Mia/Materials/body_eye.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Live Capture/1.1.1/ARKit Face Sample/FaceCaptureSample.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Live Capture/1.1.1/ARKit Face Sample/FaceCaptureSample.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Live Capture/1.1.1/ARKit Face Sample/SampleHead.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Live Capture/1.1.1/ARKit Face Sample/SampleHead.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BStoAU.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BStoAU.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BStoAUEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BStoAUEditor.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +98,9 @@
       <workItem from="1698044368525" duration="2401000" />
       <workItem from="1698212050250" duration="11102000" />
       <workItem from="1698228140164" duration="11740000" />
-      <workItem from="1698289440853" duration="374000" />
+      <workItem from="1698289440853" duration="878000" />
+      <workItem from="1698865524956" duration="3973000" />
+      <workItem from="1698890866254" duration="10520000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,7 @@ public class BStoAUEditor : Editor
 {
     private bool _foldout1;
     private bool _foldout2;
+    // private string _text = "";
     public override void OnInspectorGUI()
     {
         BStoAU bStoAU = (BStoAU)target;
@@ -29,10 +30,12 @@ public class BStoAUEditor : Editor
             bStoAU.AU15 = EditorGUILayout.Slider("AU15",bStoAU.AU15, .0f, 100f);
             bStoAU.AU16 = EditorGUILayout.Slider("AU16",bStoAU.AU16, .0f, 100f);
             bStoAU.AU17 = EditorGUILayout.Slider("AU17",bStoAU.AU17, .0f, 100f);
-            bStoAU.AU18 = EditorGUILayout.Slider("AU18",bStoAU.AU18, .0f, 100f);
+            // bStoAU.AU18 = EditorGUILayout.Slider("AU18",bStoAU.AU18, .0f, 100f);
             bStoAU.AU20 = EditorGUILayout.Slider("AU20",bStoAU.AU20, .0f, 100f);
             bStoAU.AU22 = EditorGUILayout.Slider("AU22",bStoAU.AU22, .0f, 100f);
-            bStoAU.AU24 = EditorGUILayout.Slider("AU24",bStoAU.AU24,.0f, 100f);
+            bStoAU.AU23 = EditorGUILayout.Slider("AU23",bStoAU.AU23, .0f, 100f);
+            bStoAU.AU24 = EditorGUILayout.Slider("AU24",bStoAU.AU24, .0f, 100f);
+            bStoAU.AU25 = EditorGUILayout.Slider("AU25",bStoAU.AU25, .0f, 100f);
             bStoAU.AU26 = EditorGUILayout.Slider("AU26",bStoAU.AU26, .0f, 100f);
             bStoAU.AU28 = EditorGUILayout.Slider("AU28",bStoAU.AU28, .0f, 100f);
             bStoAU.AU45 = EditorGUILayout.Slider("AU45",bStoAU.AU45, .0f, 100f);
@@ -43,6 +46,12 @@ public class BStoAUEditor : Editor
             bStoAU.AD34 = EditorGUILayout.Slider("AD34",bStoAU.AD34, .0f, 100f);
             bStoAU.M63 = EditorGUILayout.Slider("M63",bStoAU.M63, .0f, 100f);
             bStoAU.M64 = EditorGUILayout.Slider("M64",bStoAU.M64, .0f, 100f);
+            bStoAU.text = EditorGUILayout.TextField("Save Object Name", bStoAU.text);
+            if (GUILayout.Button("Save Action Units"))
+            {
+                bStoAU.Save();
+                bStoAU.text = "";
+            }
         }
         _foldout2 = EditorGUILayout.Foldout(_foldout2, "Facial expressions");
         if (_foldout2)
@@ -62,8 +71,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 60f;
                 bStoAU.AU17 = 60f;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU23 = 0;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 0;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -84,8 +93,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 0;
                 bStoAU.AU17 = 0;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 100f;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU23 = 100f;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 0;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -106,8 +115,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 100f;
                 bStoAU.AU17 = 100f;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU23 = 0;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 0;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -128,8 +137,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 0;
                 bStoAU.AU17 = 0;
                 bStoAU.AU20 = 60f;
-                // bStoAU.AU23 = 60f;
-                // bStoAU.AU25 = 60f;
+                bStoAU.AU23 = 60f;
+                bStoAU.AU25 = 60f;
                 bStoAU.AU26 = 60f;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -150,8 +159,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 0;
                 bStoAU.AU17 = 0;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 100f;
+                bStoAU.AU23 = 0;
+                bStoAU.AU25 = 100f;
                 bStoAU.AU26 = 0;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -170,13 +179,24 @@ public class BStoAUEditor : Editor
                 bStoAU.AU12 = 0;
                 bStoAU.AU14 = 0;
                 bStoAU.AU15 = 0;
+                bStoAU.AU16 = 0;
                 bStoAU.AU17 = 0;
+                bStoAU.AU18 = 0;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU22 = 0;
+                bStoAU.AU23 = 0;
+                bStoAU.AU24 = 0;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 0;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
+                bStoAU.AU65 = 0;
+                bStoAU.AU66 = 0;
+                bStoAU.AD29 = 0;
+                bStoAU.AD30 = 0;
+                bStoAU.AD34 = 0;
+                bStoAU.M63 = 0;
+                bStoAU.M64 = 0;
                 bStoAU.Neutral();
             }
             if (GUILayout.Button("sadness"))
@@ -194,8 +214,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 100f;
                 bStoAU.AU17 = 60f;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU23 = 0;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 0;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -216,8 +236,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 0;
                 bStoAU.AU17 = 0;
                 bStoAU.AU20 = 40f;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU23 = 0;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 40f;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;
@@ -238,8 +258,8 @@ public class BStoAUEditor : Editor
                 bStoAU.AU15 = 0;
                 bStoAU.AU17 = 0;
                 bStoAU.AU20 = 0;
-                // bStoAU.AU23 = 0;
-                // bStoAU.AU25 = 0;
+                bStoAU.AU23 = 0;
+                bStoAU.AU25 = 0;
                 bStoAU.AU26 = 60f;
                 bStoAU.AU28 = 0;
                 bStoAU.AU45 = 0;

@@ -1,21 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Directory = UnityEngine.Windows.Directory;
 
 public class BStoAU : MonoBehaviour
 {
-    [SerializeField]private GameObject characterHead;
-    [SerializeField]private SkinnedMeshRenderer skinnedMeshRenderer;
+    [SerializeField] private GameObject characterHead;
+    [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
+
+    [Header("Use or Not")] 
+    [SerializeField] private bool useExistingData;
+    private SavedAU savedAU;
     
     private Mesh _skinnedMesh;
     private int _blendShapeCount;
     
+    // リスト化したらもっと綺麗にコードがかけるかも
+    // 注意；AU23,AU25においては似た動きをするblendshapeを動かしている為正確ではない。
     [HideInInspector]
     [Range(.0f, 100f)] public float AU1, AU2, AU4, AU5, AU6, AU7, 
-        AU9, AU10, AU12, AU14, AU15, AU16, AU17, AU18, AU20, AU22, AU24, 
-        AU26, AU28, AU45, AU65, AU66, AD29, AD30, AD34,
-        M63, M64;
+        AU9, AU10, AU12, AU14, AU15, AU16, AU17, AU18, AU20, AU22, 
+        AU23, AU24, AU25, AU26, AU28, AU45, AU65, AU66, AD29, AD30, 
+        AD34, M63, M64;
+    
+    [HideInInspector] public string text;
 
     // private int[] ARKitLabels = new int[46];
 
@@ -196,7 +209,7 @@ public class BStoAU : MonoBehaviour
 
     private void Update()
     {
-        #region setBlendShapeWeightFromAU
+        #region setBlendShapeValueFromAU
         
         skinnedMeshRenderer.SetBlendShapeWeight(_browInnerUpIndex, AU1);
         skinnedMeshRenderer.SetBlendShapeWeight(_browOuterUpLeftIndex, AU2);
@@ -232,8 +245,10 @@ public class BStoAU : MonoBehaviour
         skinnedMeshRenderer.SetBlendShapeWeight(_mouthLowerDownLeftIndex, AU16);
         skinnedMeshRenderer.SetBlendShapeWeight(_mouthLowerDownRightIndex, AU16);
         skinnedMeshRenderer.SetBlendShapeWeight(_mouthShrugLowerIndex, AU17);
+        skinnedMeshRenderer.SetBlendShapeWeight(_mouthShrugUpperIndex, AU25);
         skinnedMeshRenderer.SetBlendShapeWeight(_cheekPuffIndex, AD34);
-        skinnedMeshRenderer.SetBlendShapeWeight(_mouthPuckerIndex, AU18);
+        // skinnedMeshRenderer.SetBlendShapeWeight(_mouthPuckerIndex, AU18);
+        skinnedMeshRenderer.SetBlendShapeWeight(_mouthPuckerIndex, AU23);
         skinnedMeshRenderer.SetBlendShapeWeight(_mouthStretchLeftIndex, AU20);
         skinnedMeshRenderer.SetBlendShapeWeight(_mouthStretchRightIndex, AU20);
         skinnedMeshRenderer.SetBlendShapeWeight(_mouthFunnelIndex, AU22);
@@ -249,6 +264,58 @@ public class BStoAU : MonoBehaviour
         #endregion
     }
 
+    private void CreateScriptableObject()
+    {
+        var obj = ScriptableObject.CreateInstance<SavedAU>();
+        SetAUValuesFromInspector(obj);
+        var fileName = text + ".asset";
+        var path = "Assets/SavedExpressions";
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        AssetDatabase.CreateAsset(obj, Path.Combine(path, fileName));
+    }
+
+    private void SetAUValuesFromInspector(SavedAU obj)
+    {
+        obj.AU1 = AU1;
+        obj.AU2 = AU2;
+        obj.AU4 = AU4;
+        obj.AU5 = AU5;
+        obj.AU6 = AU6;
+        obj.AU7 = AU7;
+        obj.AU9 = AU9;
+        obj.AU10 = AU10;
+        obj.AU12 = AU12;
+        obj.AU14 = AU14;
+        obj.AU15 = AU15;
+        obj.AU16 = AU16;
+        obj.AU17 = AU17;
+        // obj.AU18 = AU18;
+        obj.AU20 = AU20;
+        obj.AU22 = AU22;
+        obj.AU23 = AU23;
+        obj.AU24 = AU24;
+        obj.AU25 = AU25;
+        obj.AU26 = AU26;
+        obj.AU28 = AU28;
+        obj.AU45 = AU45;
+        obj.AU65 = AU65;
+        obj.AU66 = AU66;
+        obj.AD29 = AD29;
+        obj.AD30 = AD30;
+        obj.AD34 = AD34;
+        obj.M63 = M63;
+        obj.M64 = M64;
+    }
+    
+    public void Save()
+    {
+        CreateScriptableObject();
+        Debug.Log("Action Units values are saved.");
+    }
+    
     public void Anger()
     {
         Debug.Log("The facial expression turned into anger.");

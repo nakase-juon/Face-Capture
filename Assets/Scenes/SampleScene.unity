@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterHead: {fileID: 447368510}
   skinnedMeshRenderer: {fileID: 447368512}
+  useExistingData: 0
   AU1: 0
   AU2: 0
   AU4: 0
@@ -158,7 +159,9 @@ MonoBehaviour:
   AU18: 0
   AU20: 0
   AU22: 0
+  AU23: 0
   AU24: 0
+  AU25: 0
   AU26: 0
   AU28: 0
   AU45: 0
@@ -169,6 +172,7 @@ MonoBehaviour:
   AD34: 0
   M63: 0
   M64: 0
+  text: 
 --- !u!1 &447368510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5528849724951564067, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
@@ -279,7 +283,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8967222904949993038, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[18]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967222904949993038, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[20]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967222904949993038, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[21]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967222904949993038, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[33]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967222904949993038, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[34]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8967222904949993038, guid: 628291127a92de746bd298b0ec1c3ae5, type: 3}
@@ -649,7 +669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.00031866512, y: 0.9977908, z: -0.06626019, w: 0.0047904896}
-  m_LocalPosition: {x: 2.2309842, y: 1.5854658, z: 0.57683706}
+  m_LocalPosition: {x: 2.1435306, y: 1.622777, z: 0.76770496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -829,6 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterHead: {fileID: 919132148599239354}
   skinnedMeshRenderer: {fileID: 5336186961144289273}
+  useExistingData: 0
   AU1: 0
   AU2: 0
   AU4: 0
@@ -845,7 +866,9 @@ MonoBehaviour:
   AU18: 0
   AU20: 0
   AU22: 0
+  AU23: 0
   AU24: 0
+  AU25: 0
   AU26: 0
   AU28: 0
   AU45: 0
@@ -856,3 +879,4 @@ MonoBehaviour:
   AD34: 0
   M63: 0
   M64: 0
+  text: 
