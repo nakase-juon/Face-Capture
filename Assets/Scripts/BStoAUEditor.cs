@@ -9,10 +9,13 @@ public class BStoAUEditor : Editor
 {
     private bool _foldout1;
     private bool _foldout2;
+    private bool _isAttached;   // アタッチされているならtrue,されていないならfalseを返す。
+
     // private string _text = "";
     public override void OnInspectorGUI()
     {
         BStoAU bStoAU = (BStoAU)target;
+        _isAttached = bStoAU.savedFacialExpression;
         DrawDefaultInspector();
         _foldout1 = EditorGUILayout.Foldout(_foldout1, "Action Units");
         if (_foldout1)

@@ -8,15 +8,17 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Directory = UnityEngine.Windows.Directory;
 
+[ExecuteAlways]
 public class BStoAU : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] private GameObject characterHead;
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
 
-    [Header("Use or Not")] 
-    [SerializeField] private bool useExistingData;
-    private SavedAU savedAU;
+    [Header("Assign Facial Expression")] 
+    public SavedAU savedFacialExpression;
     
+    private SavedAU savedAU;
     private Mesh _skinnedMesh;
     private int _blendShapeCount;
     
@@ -87,7 +89,7 @@ public class BStoAU : MonoBehaviour
     private int _jawForwardIndex;
     
     #endregion
-    // Start is called before the first frame update
+    
     void Start()
     {
         skinnedMeshRenderer = characterHead.GetComponent<SkinnedMeshRenderer>();
@@ -205,6 +207,42 @@ public class BStoAU : MonoBehaviour
 
         #endregion
         
+        #region assignAUValues
+
+        if (savedFacialExpression)
+        {
+            AU1 = savedFacialExpression.AU1;
+            AU2 = savedFacialExpression.AU2;
+            AU4 = savedFacialExpression.AU4;
+            AU5 = savedFacialExpression.AU5;
+            AU6 = savedFacialExpression.AU6;
+            AU7 = savedFacialExpression.AU7;
+            AU9 = savedFacialExpression.AU9;
+            AU10 = savedFacialExpression.AU10;
+            AU12 = savedFacialExpression.AU12;
+            AU14 = savedFacialExpression.AU14;
+            AU15 = savedFacialExpression.AU15;
+            AU16 = savedFacialExpression.AU16;
+            AU17 = savedFacialExpression.AU17;
+            // AU18 = savedFacialExpression.AU18;
+            AU20 = savedFacialExpression.AU20;
+            AU22 = savedFacialExpression.AU22;
+            AU23 = savedFacialExpression.AU23;
+            AU24 = savedFacialExpression.AU24;
+            AU25 = savedFacialExpression.AU25;
+            AU26 = savedFacialExpression.AU26;
+            AU28 = savedFacialExpression.AU28;
+            AU45 = savedFacialExpression.AU45;
+            AU65 = savedFacialExpression.AU65;
+            AU66 = savedFacialExpression.AU66;
+            AD29 = savedFacialExpression.AD29;
+            AD30 = savedFacialExpression.AD30;
+            AD34 = savedFacialExpression.AD34;
+            M63 = savedFacialExpression.M63;
+            M64 = savedFacialExpression.M64;
+        }
+
+        #endregion
     }
 
     private void Update()
